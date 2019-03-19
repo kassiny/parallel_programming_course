@@ -1,4 +1,4 @@
-set(PROJECT_NAME "panova_e_conj_gradient_omp")
+set(PROJECT_NAME "razumova_m_rect_integr_omp")
 
 if ( USE_OMP )
     project( ${PROJECT_NAME} )
