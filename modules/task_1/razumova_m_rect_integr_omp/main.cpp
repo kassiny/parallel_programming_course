@@ -51,9 +51,9 @@ int main(int argc, char* argv[]) {
         z1 = atof(argv[5]);
         z2 = atof(argv[6]);
         n = atoi(argv[7]);
-        double hx = (x2 - x1) / n;
-        double hy = (y2 - y1) / n;
-        double hz = (z2 - z1) / n;
+        hx = (x2 - x1) / n;
+        hy = (y2 - y1) / n;
+        hz = (z2 - z1) / n;
         std::cout << tripleIntegral(constantTwo, x1, y1, z1, hx, hy, hz, n);
     }
 
