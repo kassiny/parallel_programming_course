@@ -1,7 +1,6 @@
-#include <iostream>
+// Copyright 2019 Razumova Maria
 #include <math.h>
-
-using namespace std;
+#include <iostream>
 
 double xplusyplusz(double x, double y, double z) {
     return x + y + z;
@@ -43,9 +42,8 @@ int main(int argc, char* argv[]) {
     double x1, x2, y1, y2, z1, z2;
     double hx, hy, hz;
     if (argc == 1) {
-        cout << tripleIntegral(xplusyplusz, 0, 0, 0, 0.01, 0.01, 0.01, 100) << endl;
-    }
-    else {
+        std::cout << tripleIntegral(xplusyplusz, 0, 0, 0, 0.01, 0.01, 0.01, 100) << std::endl;
+    } else {
         x1 = atof(argv[1]);
         x2 = atof(argv[2]);
         y1 = atof(argv[3]);
@@ -56,7 +54,7 @@ int main(int argc, char* argv[]) {
         double hx = (x2 - x1) / n;
         double hy = (y2 - y1) / n;
         double hz = (z2 - z1) / n;
-        cout << tripleIntegral(constantTwo, x1, y1, z1, hx, hy, hz, n);
+        std::cout << tripleIntegral(constantTwo, x1, y1, z1, hx, hy, hz, n);
     }
 
     return 0;
