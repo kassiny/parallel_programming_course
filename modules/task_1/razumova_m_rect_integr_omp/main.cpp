@@ -18,7 +18,7 @@ double trignometricChaos(double x, double y, double z) {
     return sin(x*y) + cos(z) + exp(cos(y*z));
 }
 
-double tripleIntegral(double f(double, double, double), 
+double tripleIntegral(double f(double, double, double),
     double x1, double y1, double z1, double hx, double hy, double hz, int n) {
 
     double sum = 0;
