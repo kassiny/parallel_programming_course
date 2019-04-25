@@ -28,7 +28,7 @@ double tripleIntegral(double f(double, double, double),
 
     double sum = 0;
 
-    #pragma omp parallel for  reduction (+:sum) 
+    #pragma omp parallel for  reduction (+:sum)
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             for (int k = 0; k < n; k++) {
