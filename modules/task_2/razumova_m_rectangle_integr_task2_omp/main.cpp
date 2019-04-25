@@ -50,8 +50,7 @@ int main(int argc, char* argv[]) {
     if (argc == 1) {
         omp_set_num_threads(4);
         std::cout << tripleIntegral(xplusyplusz, 0, 0, 0, 0.01, 0.01, 0.01, 100) << std::endl;
-    }
-    else {
+    } else {
         x1 = atof(argv[1]);
         x2 = atof(argv[2]);
         y1 = atof(argv[3]);
