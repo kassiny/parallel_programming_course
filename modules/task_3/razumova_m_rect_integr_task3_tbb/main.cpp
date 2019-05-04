@@ -1,8 +1,8 @@
 // Copyright 2019 Razumova Maria
 #include <math.h>
-#include <iostream>
 #include <tbb/tbb.h>
-#include <tbb/task_scheduler_init.h>
+#include <iostream>
+#include <functional>
 
 double xplusyplusz(double x, double y, double z) {
     return x + y + z;
@@ -26,11 +26,9 @@ double trignometricChaos(double x, double y, double z) {
 
 double tripleIntegral(double f(double, double, double),
     double x1, double y1, double z1, double hx, double hy, double hz, int n) {
-
     return tbb::parallel_reduce(
-        tbb::blocked_range3d<int>(0, n, 0, n, 0, n), double(0),
+        tbb::blocked_range3d<int>(0, n, 0, n, 0, n), static_cast<double>(0),
         [&](const tbb::blocked_range3d<int> &range, double res)->double {
-        
         for (int i = range.pages().begin(); i != range.pages().end(); ++i) {
             for (int j = range.rows().begin(); j != range.rows().end(); ++j) {
                 for (int k = range.cols().begin(); k != range.cols().end(); ++k) {
@@ -73,8 +71,7 @@ int main(int argc, char* argv[]) {
         std::cout << tripleIntegral(xplusyplusz, 0, 0, 0, 0.01, 0.01, 0.01, 100) << std::endl;
         tbb::tick_count t2 = tbb::tick_count::now();
         std::cout << std::endl << (t1 - t2).seconds();
-    }
-    else {
+    } else {
         x1 = atof(argv[1]);
         x2 = atof(argv[2]);
         y1 = atof(argv[3]);
