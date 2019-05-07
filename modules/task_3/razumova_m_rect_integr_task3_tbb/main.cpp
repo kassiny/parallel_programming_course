@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
         tbb::tick_count t1 = tbb::tick_count::now();
         std::cout << tripleIntegral(xplusyplusz, 0, 0, 0, 0.01, 0.01, 0.01, 100) << std::endl;
         tbb::tick_count t2 = tbb::tick_count::now();
-        std::cout << std::endl << (t1 - t2).seconds();
+        std::cout << std::endl << (t2 - t1).seconds();
     } else {
         x1 = atof(argv[1]);
         x2 = atof(argv[2]);
